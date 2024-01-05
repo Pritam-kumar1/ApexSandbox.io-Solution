@@ -1,4 +1,4 @@
 public String aOrAn(String word) {
     //code here
-    System.debug("hello")
+    System.debug('hello')
 }
