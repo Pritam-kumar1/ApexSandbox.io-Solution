@@ -1,4 +1,7 @@
 public String aOrAn(String word) {
     //code here
-    System.debug('hello')
+    String wholeWord = word.charAt(0).toLowercase();
+    if(wholeWord=='a'||wholeWord=='e'||wholeWord=='i'||wholeWord=='o'||wholeWord=='u')
+    return 'an '+ wholeWord;
+    return 'a '+ wholeWord
 }
