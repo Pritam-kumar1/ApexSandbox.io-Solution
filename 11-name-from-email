@@ -2,5 +2,5 @@ public String nameFromEmail(String email) {
     //code here
     List<String> splitString1 = email.split('.');
     //List<String> splitString2 = splitString1.split('@',1);
-    return splitString1 + ' ' + splitString2;
+    return splitString1 + ' ' ;
 }
