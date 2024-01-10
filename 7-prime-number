@@ -1,0 +1,9 @@
+public Boolean isPrime(Integer num) {
+    //code here
+    Boolean Flag = true;
+    for(Interger i=2;i<num;i++){
+        if(Math.Mod(num,i)==0)
+        Flag = false;
+    }
+    return Flag;
+}
