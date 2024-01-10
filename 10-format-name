@@ -3,7 +3,7 @@ public String formatName(String firstName, String lastName) {
     if(!String.isEmpty(firstName) && !String.isEmpty(lastName)){
         return lastName + ', ' + firstName ;
     }
-    if(firstName == '')
+    if(String.isEmpty(firstName))
     return lastName;
     return firstName;
 }
