@@ -1,0 +1,5 @@
+public Integer sumToN(Integer n) {
+    //code here
+    Integer Sum = (n*(n+1))/2;
+    return Sum;
+}
