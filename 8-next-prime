@@ -7,7 +7,7 @@ public Integer nextPrime(Integer num) {
         continue;
         for(Integer j= 5; j*j<i ; j=j+6){
             if(Math.Mod(i,j) ==0 || Math.Mod(i,j+2)== 0)
-            continue;
+            break;
         }
         return i;
     }
