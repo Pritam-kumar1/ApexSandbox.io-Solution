@@ -4,8 +4,8 @@ public Integer nextPrime(Integer num) {
     return num +1;
     while(true){
         num++;
-        if(isPrime(i)){
-            return i;
+        if(isPrime(num)){
+            return num;
         } 
     }
     return 0;
