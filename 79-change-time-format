@@ -1,0 +1,19 @@
+public String changeTimeFormat(String strTime) {
+    //code here
+    List<String> parts = strTime.split('//:');
+    Integer hour = Integer.valueOf(parts[0]);
+    //Integer min = Integer.valueOf(parts[1]);
+    String timePeriod = 'AM';
+    if(hour == 00){
+        hour = 12;
+        timePeriod = 'AM';
+    }
+    else if(hour>12 && hour<24){
+        hour = hour - 12;
+        timePeriod = 'PM';
+    }else if( hour == 12){
+        timePeriod = 'PM';
+    }
+        
+    return String.valueOf(hour) + ':' + parts[1] + ' ' + timePeriod;
+}
