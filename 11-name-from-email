@@ -1,6 +1,6 @@
 public String nameFromEmail(String email) {
     //code here
-    List<String> splitString1 = email.split('.');
-    //List<String> splitString2 = splitString1.split('@',1);
-    return splitString1 + ' ' ;
+     List<String> splitString1 = email.split('\\.');
+    List<String> splitString2 = splitString1[1].split('\\@');
+    return splitString1[0].capitalize()+' '+splitString2[0].capitalize();
 }
