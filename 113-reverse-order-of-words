@@ -2,5 +2,9 @@ public String reverseWordsInASentence(String sentence){
     //your flawless code here
     List<String> sen = sentence.split(' ');
     System.debug(sen);
-    return sen[0];
+    String rev='';
+    for(Integer i = sen.size()-1 ; i>=0  ;i--){
+        rev = rev + sen[i];
+    }
+    return rev;
 }
