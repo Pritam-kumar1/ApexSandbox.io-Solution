@@ -15,5 +15,5 @@ public String changeTimeFormat(String strTime) {
         timePeriod = 'PM';
     }
         
-    return String.valueOf(hour) + ':' + parts[1] + ' ' + timePeriod;
+    return String.valueOf(hour).leftPad(2,'0') + ':' + parts[1] + ' ' + timePeriod;
 }
