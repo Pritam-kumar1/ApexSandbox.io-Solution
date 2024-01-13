@@ -5,6 +5,6 @@ public String registerStudent(String name, String phone, String email) {
     student.apxio__Phone__c = phone;
     student.apxio__Email__c = email;
     insert student;
-    apxio__Student__c listStudent = [Select id, apxio__Registration_Number__c from apxio__Student__c where id=: student.id LIMIT 1] 
+    apxio__Student__c listStudent = [Select Id, apxio__Registration_Number__c from apxio__Student__c where id=: student.Id LIMIT 1] 
     return listStudent.apxio__Registration_Number__c;
 }
