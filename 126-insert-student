@@ -4,4 +4,5 @@ public Id insertStudent(String name, String email) {
     a.Name = name;
     a.apxio__Email__c = email;
     insert a;
+    return a.id;
 }
