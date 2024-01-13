@@ -6,5 +6,5 @@ public String registerStudent(String name, String phone, String email) {
     student.apxio__Email__c = email;
     insert student;
     //apxio__Student__c listStudent = [Select apxio__Registration_Number__c from apxio__Student__c LIMIT 1] 
-    return listStudent.apxio__Registration_Number__c;
+    return apxio__Registration_Number__c;
 }
