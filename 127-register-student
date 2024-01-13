@@ -1,14 +1,10 @@
 public String registerStudent(String name, String phone, String email) {
     // code here
     apxio__Student__c student = new apxio__Student__c();
-student.Name = name;
-student.apxio__Phone__c = phone;
-student.apxio__Email__c = email;
-insert student;
-
-// Use 'Id' instead of 'id' in the query
-apxio__Student__c listStudent = [SELECT Id, apxio__Registration_Number__c FROM apxio__Student__c WHERE Id = :student.Id LIMIT 1];
-// Use the variable 'listStudent' to retrieve the registration number
-return listStudent.apxio__Registration_Number__c;
-
+    student.Name = name;
+    student.apxio__Phone__c = phone;
+    student.apxio__Email__c = email;
+    insert student;
+    apxio__Student__c listStudent = [Select id, apxio__Registration_Number__c from apxio__Student__c where id:= student.id LIMIT 1] 
+    return listStudent.apxio__Registration_Number__c;
 }
