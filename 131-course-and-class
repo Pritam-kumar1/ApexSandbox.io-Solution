@@ -8,7 +8,7 @@ public void createCourseAndClass(String name, String description) {
         course.Name = name;
         course.apxio__Course_Details__c = description;
         insert course;
-        className.course = course.Id;
+        className.apxio__Course__c = course.Id;
         className.Name = name;
         if(description.length() >maxSize)
         className.apxio__Description__c = description.substring(0,maxSize);
