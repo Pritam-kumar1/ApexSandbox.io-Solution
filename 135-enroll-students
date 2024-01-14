@@ -2,13 +2,16 @@ public void enrollStudents(List<String> emails, String className) {
     // code here
     List<apxio__Student__c> listStudent = [Select Id from apxio__Student__c where apxio__Email__c In emails];
     List<apxio__Class__c> classEnroll = [Select Id from apxio__Class__c where Name=:className];
-    List<apxio__Class_Enrollment__c> enrolledClass = new List<apxio__Class_Enrollment__c>();
-    for(Integer i=0; i<listStudent.size(); i++){
-        apxio__Class_Enrollment__c enroll = new apxio__Class_Enrollment__c(
-            apxio__Student__c = listStudent[i].Id,
-            apxio__Offered_Class__c = classEnroll.Id
-        );
-        enrolledClass.add(enroll);
+    if(!listStudent.isEmpty()){
+        List<apxio__Class_Enrollment__c> enrolledClass = new List<apxio__Class_Enrollment__c>();
+        for(Integer i=0; i<listStudent.size(); i++){
+            apxio__Class_Enrollment__c enroll = new apxio__Class_Enrollment__c(
+                apxio__Student__c = listStudent[i].Id,
+                apxio__Offered_Class__c = classEnroll.Id
+            );
+            enrolledClass.add(enroll);
+        }
+        insert enrolledClass;
     }
-    insert enrolledClass;
+    
 }
