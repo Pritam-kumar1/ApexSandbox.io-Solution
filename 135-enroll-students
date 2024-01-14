@@ -2,7 +2,7 @@ public void enrollStudents(List<String> emails, String className) {
     // code here
     List<apxio__Student__c> listStudent = [Select Id from apxio__Student__c where apxio__Email__c In :emails];
     List<apxio__Class__c> classEnroll = [Select Id from apxio__Class__c where Name=:className];
-    if(!listStudent.isEmpty()){
+    // if(!listStudent.isEmpty()){
         List<apxio__Class_Enrollment__c> enrolledClass = new List<apxio__Class_Enrollment__c>();
         for(Integer i=0; i<listStudent.size(); i++){
             apxio__Class_Enrollment__c enroll = new apxio__Class_Enrollment__c(
@@ -12,7 +12,7 @@ public void enrollStudents(List<String> emails, String className) {
             enrolledClass.add(enroll);
         }
         insert enrolledClass;
-    }
+    //}
     // Query for students with given emails
     // List<apxio__Student__c> listStudent = [SELECT Id FROM apxio__Student__c WHERE apxio__Email__c IN :emails];
 
