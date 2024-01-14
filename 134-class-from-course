@@ -1,7 +1,7 @@
 public Id classFromCourse(String courseName) {
     // code here
     List<apxio__Course__c> courseRelated = [Select Id from apxio__Course__c where Name=:courseName Limit 1];
-    if(courseRelated[0].Id == null){
+    if(!courseRelated.isEmpty()){
         apxio__Class__c classCreated = new apxio__Class__c();
         classCreated.apxio__Course__c = courseRelated[0].Id;
         classCreated.Name = courseName;
