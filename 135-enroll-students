@@ -1,17 +1,42 @@
 public void enrollStudents(List<String> emails, String className) {
     // code here
-    List<apxio__Student__c> listStudent = [Select Id from apxio__Student__c where apxio__Email__c In emails];
-    List<apxio__Class__c> classEnroll = [Select Id from apxio__Class__c where Name=:className];
-    if(!listStudent.isEmpty()){
-        List<apxio__Class_Enrollment__c> enrolledClass = new List<apxio__Class_Enrollment__c>();
-        for(Integer i=0; i<listStudent.size(); i++){
+    // List<apxio__Student__c> listStudent = [Select Id from apxio__Student__c where apxio__Email__c In emails];
+    // List<apxio__Class__c> classEnroll = [Select Id from apxio__Class__c where Name=:className];
+    // if(!listStudent.isEmpty()){
+    //     List<apxio__Class_Enrollment__c> enrolledClass = new List<apxio__Class_Enrollment__c>();
+    //     for(Integer i=0; i<listStudent.size(); i++){
+    //         apxio__Class_Enrollment__c enroll = new apxio__Class_Enrollment__c(
+    //             apxio__Student__c = listStudent[i].Id,
+    //             apxio__Offered_Class__c = classEnroll.Id
+    //         );
+    //         enrolledClass.add(enroll);
+    //     }
+    //     insert enrolledClass;
+    // }
+    // Query for students with given emails
+    List<apxio__Student__c> listStudent = [SELECT Id FROM apxio__Student__c WHERE apxio__Email__c IN :emails];
+
+    // Query for the class with the given className
+    List<apxio__Class__c> classEnrollList = [SELECT Id FROM apxio__Class__c WHERE Name = :className];
+
+    // Check if the classEnrollList is not empty before accessing the first element
+    if (!classEnrollList.isEmpty()) {
+        apxio__Class__c classEnroll = classEnrollList[0];
+
+        // Create a list to store class enrollments
+        List<apxio__Class_Enrollment__c> enrolledClassList = new List<apxio__Class_Enrollment__c>();
+
+        // Loop through each student and create a class enrollment record
+        for (apxio__Student__c student : listStudent) {
             apxio__Class_Enrollment__c enroll = new apxio__Class_Enrollment__c(
-                apxio__Student__c = listStudent[i].Id,
+                apxio__Student__c = student.Id,
                 apxio__Offered_Class__c = classEnroll.Id
             );
-            enrolledClass.add(enroll);
+            enrolledClassList.add(enroll);
         }
-        insert enrolledClass;
+
+        // Insert the list of class enrollments
+        insert enrolledClassList;
     }
     
 }
