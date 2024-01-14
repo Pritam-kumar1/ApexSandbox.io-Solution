@@ -4,12 +4,28 @@ public void createCourseAndClass(String name, String description) {
     apxio__Class__c className = new apxio__Class__c();
     Integer maxSize = 255;
 
-    if(name!='' && description!=''){
+    if(name!=null && description!=null){
         course.Name = name;
         course.apxio__Course_Details__c = description;
         insert course;
         className.apxio__Course__c = course.Id;
         className.Name = name;
+        className.apxio__Description__c = description.left(maxSize);
+        insert className;
+    }else if(description==null){
+        course.Name = name;
+        course.apxio__Course_Details__c = null;
+        insert course;
+        className.apxio__Course__c = course.Id;
+        className.Name = name;
+        className.apxio__Description__c = null;
+        insert className;
+    }else if(name==null){
+        course.Name = null;
+        course.apxio__Course_Details__c = description;
+        insert course;
+        className.apxio__Course__c = course.Id;
+        className.Name = null;
         className.apxio__Description__c = description.left(maxSize);
         insert className;
     }
