@@ -2,7 +2,7 @@ public List<Account> checkAccounts(List<Account> accounts)
 {
     // code here 
     if(accounts == null){
-        throw new IllegalArgumentException();
+        throw new IllegalArgumentException('accounts should not be null');
     }else{
         for(Integer i=0; i<accounts.size(); i++){
             if(String.isEmpty(accounts[i].BillingCity))
