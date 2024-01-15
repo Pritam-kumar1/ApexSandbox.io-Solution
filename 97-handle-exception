@@ -2,6 +2,7 @@ public String divide(Integer a, Integer b){
     //code here
     try {
         String c = String.valueOf(a/b);
+        return c;
     }catch(Exception ex){
         throw new Error('Divide by 0');
     }
