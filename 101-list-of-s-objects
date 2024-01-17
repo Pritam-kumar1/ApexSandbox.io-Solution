@@ -1,6 +1,9 @@
 public List<sObject> getListOfsObject(List<Account> accounts, List<Contact> contacts)
 {
     // code here
+    if(accounts.isEmpty() && contacts.isEmpty()){
+        return new List<sObject>();
+    }
     List<sObject> objectList = new List<sObject>();
     for(Account a : accounts){
         objectList.add(a);
