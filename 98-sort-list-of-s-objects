@@ -1,8 +1,7 @@
 public List<Account> getAccounts(List<Account> accounts) {
     // code here
-    for(Account a : accounts){
-        a.sort(new AccountComparator().compare());
-    }
+        a.sort(new AccountComparator());
+    
 }
 // write extra class here 
 public class AccountComparator implements Comparator<Account> {
