@@ -2,7 +2,7 @@ public Boolean isBirthday(Contact c) {
     //code here
     String todayDate = Date.today().format().substringBeforeLast('/');
     String bdayDate = c.Birthdate.format().substringBeforeLast('/');
-    if(todayDate.compareTo(bdayDate))
+    if(todayDate.compareTo(bdayDate) == 0)
     return true;
     return false;
 
