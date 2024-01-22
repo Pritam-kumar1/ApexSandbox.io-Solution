@@ -1,5 +1,9 @@
 public Boolean isBirthday(Contact c) {
     //code here
-    System.debug('Hello');
+    String todayDate = Date.today().format().substringBeforeLast('/');
+    String bdayDate = c.Birthdate.format().substringBeforeLast('/');
+    if(todayDate.compareTo(bdayDate))
     return true;
+    return false;
+
 }
