@@ -1,6 +1,6 @@
 public void setParent(Account acc, Contact con, Opportunity opp) {
     //code here
-    if(!String.isBlank(acc.Id)){
+    if(String.isBlank(acc.Id)){
         con.AccountId = acc.Id;
         opp.AccountId = acc.Id;
     }
