@@ -3,7 +3,7 @@ public List<Integer> evenNumbers(Integer n) {
     List<Integer> evenList = new List<Integer>();
     Integer sum = 0;
     for(Integer i =1; i<=n; i++){
-        sum+=2
+        sum+=2;
         evenList.add(sum);
     }
     return evenList;
