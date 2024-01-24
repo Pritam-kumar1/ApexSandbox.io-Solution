@@ -1,6 +1,6 @@
 public static Integer findLargest(List<Integer> nums) {
 	//code here
-    Integer lrg =-2147483648;
+    Integer lrg =-2147483647;
     for(Integer i : nums){
         if(i>lrg)
         lrg=i;
