@@ -1,6 +1,6 @@
 public static Integer findLargest(List<Integer> nums) {
 	//code here
-    Integer lrg =0;
+    Integer lrg =Integer.MIN_VALUE;
     for(Integer i : nums){
         if(i>lrg)
         lrg=i;
