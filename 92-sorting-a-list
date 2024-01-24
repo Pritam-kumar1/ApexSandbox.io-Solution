@@ -1,9 +1,7 @@
 public List<String> getNamesInAscOrder(List<String> accountNames)
 {
     //code here
-    List<String> sortingString = new List<String>;
-    for(String s : accountNames){
-        sortingString.add(s);
-    }
+    List<String> sortingString = new List<String>(accountNames);
+    
     return sortingString.sort();
 }
