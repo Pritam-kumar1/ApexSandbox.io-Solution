@@ -1,9 +1,9 @@
 public List<Integer> evenNumbers(Integer n) {
     //code here
     List<Integer> evenList = new List<Integer>();
+    Integer sum = 0;
     for(Integer i =1; i<=n; i++){
-        if(Math.Mod(i,2) == 0)
-        evenList.add(i);
+        evenList.add(sum+2);
     }
     return evenList;
 }
