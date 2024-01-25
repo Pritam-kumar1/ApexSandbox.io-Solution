@@ -1,0 +1,19 @@
+public Boolean companionPlants(List<String> plants) {
+    //code here
+    String lastPlant= plants[0];
+    for(Integer i = 1;i<plants.size();i++){
+        if(lastPlant == 'lettuce' && (plants[i]=='cucumbers' || plants[i]=='onions'))
+            lastPlant=plants[i];
+        else if(lastPlant == 'onions' && (plants[i]=='carrots' || plants[i]=='lettuce' || plants[i]=='tomatoes'))
+            lastPlant=plants[i];
+        else if(lastPlant == 'cucumbers' && plants[i]=='lettuce')
+            lastPlant=plants[i];
+        else if(lastPlant == 'carrots' && plants[i]=='onions')
+            lastPlant=plants[i];
+        else if(lastPlant == 'tomatoes' && plants[i]=='onions')
+            lastPlant=plants[i];
+        else
+            return false;
+    }
+    return true;
+}
