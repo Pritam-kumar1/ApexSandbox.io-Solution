@@ -1,8 +1,10 @@
 public Boolean companionPlants(List<String> plants) {
     //code here
     Integer sizeplant = plants.size();
-    if(sizeplant == 1 || plants.isEmpty())
+    if(sizeplant == 1 )
     return false;
+    if(plants.isEmpty())
+    return true;
     String lastPlant= plants[0];
     for(Integer i = 1;i<sizeplant;i++){
         if(lastPlant == 'lettuce' && (plants[i]=='cucumbers' || plants[i]=='onions'))
