@@ -9,7 +9,7 @@ public List<Integer> fibonacciSeries(Integer n) {
         newList.add(0,1);
         newList.add(1,1);
         return newList;
-    }else if(i>2){
+    }else if(n>2){
         Integer sum = 0;
         newList.add(0,1);
         newList.add(1,1);
