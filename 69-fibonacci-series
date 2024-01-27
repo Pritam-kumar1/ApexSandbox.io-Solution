@@ -1,8 +1,8 @@
 public List<Integer> fibonacciSeries(Integer n) {
     //code here
     List<Integer> newList = new List<Integer>;
-    if(n!=null)
-    if(n==1){
+    if(n!=null){
+        if(n==1){
         newList.add(0,1);
         return newList;
     }else if(n==2){
@@ -18,6 +18,8 @@ public List<Integer> fibonacciSeries(Integer n) {
             newList.add(i , sum);
         }
     }
+    }
+    
     return newList;
     
 
