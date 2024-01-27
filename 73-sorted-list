@@ -1,7 +1,7 @@
 public boolean isSorted(List<Integer> numbers) {
     //code here
-    boolean checkAsc;
-    boolean checkDsce;
+    boolean checkAsc = true;
+    boolean checkDsce = true;
     if(numbers.isEmpty() || numbers.size()==1){
         return true;
     }if(numbers.size() >=2){
