@@ -15,7 +15,7 @@ public List<Integer> fibonacciSeries(Integer n) {
         newList.add(1);
         for(Integer i = 2 ;i<n;i++){
             sum = newList.get(i-1) + newList.get(i-2);
-            newList.add(i , sum);
+            newList.add(sum);
         }
     }
     }
