@@ -1,0 +1,10 @@
+public Set<Id> accountIds(List<Opportunity> opps) {
+    //code here
+    Set<Id> accId = new Set<Id>();
+    for(Opportunity o : opps){
+        if(o.AccountId != null){
+            accId.add(o.AccountId);
+        }
+    }
+    return accId;
+}
