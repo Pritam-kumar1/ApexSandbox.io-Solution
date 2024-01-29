@@ -1,0 +1,18 @@
+public Boolean sameElements(List<Integer> nums1, List<Integer> nums2) {
+    //code here
+    Boolean flag = true;
+    for(Integer value : nums1){
+        if(!nums2.contains(value)){
+            flag = false;
+        }
+    }
+    for(Integer value : nums2){
+        if(!nums2.contains(value)){
+            flag = false;
+        }
+    }
+    if(flag){
+        return true;
+    }
+    return false;
+}
