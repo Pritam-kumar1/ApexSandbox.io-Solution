@@ -35,14 +35,14 @@ public class LinkedList{
     public void addToTail(Integer value){
         Node newNode = new Node();
         newNode.data = value;
-        if (head == null) {
-            head = newNode;
-            tail = head;
+        if (this.head == null) {
+            this.head = newNode;
+            this.tail = this.head;
         }else {
             this.tail.next = newNode;
             this.tail = newNode;
         }
-        size++;
+        this.size++;
     }
 
     public Integer removeFromTail(){
