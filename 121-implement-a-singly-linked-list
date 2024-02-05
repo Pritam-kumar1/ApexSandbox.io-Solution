@@ -9,34 +9,30 @@ public class LinkedList{
     }
     
     public void addToFront(Integer value){
-        Node node = new Node();
-
-        node.data = value;
-
-        if (this.head == null) {
-
-            this.head = node;
-
+        Node newNode = new Node();
+        newNode.data = value;
+        if(this.head == null){
+            this.head = newNode;
             this.tail = this.head;
-
-        } else {
-
-            //do this in order
-
-            node.next = this.head;
-
-            head = node;
-
+        }else{
+            newNode.next = this.head;
+            head = newNode;
         }
-
         this.size++;
     }
     public Integer removeFromFront(){
-        if(head == null)
-        return null;
+        if(size == 0){
+
+            return null;
+
+        }
+
         Integer value = head.data;
+
         head = head.next;
-        size -- ;
+
+        size--;
+
         return value;
     }
     public void addToTail(Integer value){
