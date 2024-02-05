@@ -23,12 +23,12 @@ public class LinkedList{
     }
 
     public Integer removeFromFront(){
-        if(size == 0){
+        if(this.size == 0){
             return null;
         }
-        Integer value = head.data;
-        head = head.next;
-        size--;
+        Integer value = this.head.data;
+        this.head = this.head.next;
+        this.size--;
         return value;
     }
 
