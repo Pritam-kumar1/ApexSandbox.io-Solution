@@ -12,11 +12,11 @@ public class LinkedList{
         Node newNode = new Node();
         newNode.data = value;
         if(this.head == null){
-            this.head = node;
+            this.head = newNode;
             this.tail = this.head;
         }else{
             newNode.next = this.head;
-            head = node;
+            head = newNode;
         }
         this.size++;
     }
@@ -32,7 +32,7 @@ public class LinkedList{
         Node newNode = new Node();
         newNode.data = value;
         if(this.head == null){
-            this.head = node;
+            this.head = newNode;
             this.tail = this.head;
         }
         else{
