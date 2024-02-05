@@ -9,15 +9,26 @@ public class LinkedList{
     }
     
     public void addToFront(Integer value){
-        Node newNode = new Node();
-        newNode.data = value;
-        if(this.head == null){
-            this.head = newNode;
+        Node node = new Node();
+
+        node.data = value;
+
+        if (this.head == null) {
+
+            this.head = node;
+
             this.tail = this.head;
-        }else{
-            newNode.next = this.head;
-            head = newNode;
+
+        } else {
+
+            //do this in order
+
+            node.next = this.head;
+
+            head = node;
+
         }
+
         this.size++;
     }
     public Integer removeFromFront(){
