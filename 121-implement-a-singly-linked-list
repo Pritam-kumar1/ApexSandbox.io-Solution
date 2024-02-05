@@ -46,24 +46,24 @@ public class LinkedList{
     }
 
     public Integer removeFromTail(){
-        if(size() == 0 ){
+        if(this.size() == 0 ){
             return null;
-        } else if(size() == 1){
-            Integer data = head.data;
-            head = null;
-            size --;
+        } else if(this.size() == 1){
+            Integer data = this.head.data;
+            this.head = null;
+            this.size --;
             return data;
         } 
-        Node current = head;
+        Node current = this.head;
         Node newTail = null;
         while (current.next != null) {
             newTail = current;
             current = current.next;
         }
         Integer data = current.data;
-        tail = newTail;
-        tail.next = null; 
-        size --;
+        this.tail = newTail;
+        this.tail.next = null; 
+        this.size --;
         return data;
     }
 
