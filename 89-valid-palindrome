@@ -1,7 +1,7 @@
 public Boolean isPalindrome(String str){
     //code here
     Pattern nonAlphanumeric = Pattern.compile('[^a-zA-Z0-9]');
-    Matcher matcher = nonAlphanumeric.matcher('a b  c');
+    Matcher matcher = nonAlphanumeric.matcher(str);
     String forword = matcher.replaceAll('').toLowerCase();
 	String backword = forword.reverse();
     if(forword == backword)
