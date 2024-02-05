@@ -1,8 +1,6 @@
 public class LinkedList{
     Node head;
-
     Node tail;
-
     Integer size;
 
     public LinkedList(){
@@ -19,7 +17,7 @@ public class LinkedList{
             this.tail = this.head;
         } else {
             node.next = this.head;
-            head = node;
+            this.head = node;
         }
         this.size++;
     }
