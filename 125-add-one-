@@ -4,6 +4,6 @@ public void plusOne(List<Integer> numbers) {
     Integer myInt = Integer.valueOf(s)+1;
     String a = String.valueOf(myInt);
     for(Integer i =0;i<a.length();i++){
-        numbers.put(Integer.valueOf(a[i]));
+        numbers[i] = (Integer.valueOf(a[i]));
     }
 }
