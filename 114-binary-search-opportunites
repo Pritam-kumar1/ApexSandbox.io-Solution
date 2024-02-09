@@ -5,8 +5,6 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     
     while(low<=high){
         Integer medium = Math.floor((low+high)/2).intValue();
-        System.debug(medium);
-        System.debug(opportunities[medium].amount);
         if(opportunities[medium].amount==target){
             return medium;
         }else if(opportunities[medium].amount>target){
