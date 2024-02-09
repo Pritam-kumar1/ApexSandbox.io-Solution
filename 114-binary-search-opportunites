@@ -1,17 +1,26 @@
 public static Integer search(List<Opportunity> opportunities, Integer target){
     // solution here
-    Integer high = opportunities.size() - 1;
-    Integer low = 0;
-    
-    while(low <= high){
-        Integer medium = Integer.valueOf(Math.floor((low + high) / 2));
-        if(opportunities.get(medium).amount == target){
-            return medium;
-        } else if(opportunities.get(medium).amount > target){
-            high = medium - 1;
-        } else if(opportunities.get(medium).amount < target){
-            low = medium + 1;
-        }
+    Integer first = 0;
+
+    Integer last = opportunities.size()-1;
+
+    while (first <= last) {
+
+        Integer middle = first + (last - first) / 2;    
+
+        if (target == opportunities[middle].Amount) 
+
+            return middle;
+
+        else if (target < opportunities[middle].Amount) 
+
+            last = middle - 1;
+
+        else
+
+            first = middle + 1;
+
     }
+
     return -1;
 }
