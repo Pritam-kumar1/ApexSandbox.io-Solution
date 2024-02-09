@@ -1,4 +1,8 @@
 public boolean isAnagram(String s1, String s2) {
     //Code here
-    if()
+    List<String> sl1 = s1.split('');
+    List<String> sl2 = s2.split('');
+    sl1.sort();
+    sl2.sort();
+    return sl1==sl2;
 }
