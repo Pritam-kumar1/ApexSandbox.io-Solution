@@ -2,11 +2,12 @@ public static String reverseWords(String str){
  // solution here 
     List<String> splitStr = str.split(' ');
     List<String> revStrList = new List<String>();
-    for(String s : splitStr){
-        List<String> splitWord = s.split('');
+    for(Integer j=0;j<splitStr.size();j++) {
+        List<String> splitWord = splitStr[j].split('');
         for(Integer i = splitWord.size()-1;i>=0;i--){
             revStrList.add(splitWord[i]);
         }
+        if(j!=splitStr.size()-1)
         revStrList.add(' ');
     }
     
