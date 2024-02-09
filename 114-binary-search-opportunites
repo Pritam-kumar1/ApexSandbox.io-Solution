@@ -4,7 +4,7 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
     Integer low = 0;
     
     while(low<=high){
-        Integer medium = Math.floor((low+high)/2);
+        Integer medium = Math.floor((low+high)/2).intValue();
         if(opportunities[medium].amount==target){
             return medium-1;
         }else if(opportunities[medium].amount<target){
