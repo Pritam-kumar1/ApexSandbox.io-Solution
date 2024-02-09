@@ -3,5 +3,4 @@ public void plusOne(List<Integer> numbers) {
     String s = String.join(numbers,',');
     Integer myInt = Integer.valueOf(s)+1;
     String a = String.valueOf(myInt);
-    numbers = Integer.valueOf(a.split(''));
 }
