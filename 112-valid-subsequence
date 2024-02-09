@@ -1,7 +1,8 @@
 public Boolean isSubSequence(String s1, String s2){
     //code here
-    for(Integer i=0;i<s1.length();i++){
-        if(s2.indexOf(s1[i])==-1){
+    List<String> abc = s1.split('');
+    for(Integer i=0;i<abc.length();i++){
+        if(s2.indexOf(abc[i])==-1){
             return false;
         }
     }
