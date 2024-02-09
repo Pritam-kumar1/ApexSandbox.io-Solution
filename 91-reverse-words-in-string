@@ -1,0 +1,10 @@
+public static String reverseWords(String str){
+ // solution here 
+    List<String> splitStr = str.split('');
+    List<String> revStrList = new List<String>();
+    for(Integer i = splitStr.size()-1;i>=0;i--){
+        revStrList.add(splitStr[i]);
+    }
+    String rev = String.join(revStrList,'');
+    return rev;
+}
