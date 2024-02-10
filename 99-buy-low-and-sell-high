@@ -1,0 +1,21 @@
+public Integer maxProfit(List<Integer> prices){
+    //code here
+    Integer min = prices[0];
+    Integer index = 0;
+    
+    for(Integer i =1;i<prices.size();i++){
+        if(min>prices[i]){
+            min=prices[i];
+            index = i;
+        }
+    }
+    if(index==prices.size())
+    return 0;
+    Integer diff = prices[i+1]-prices[index];
+    for(Integer i = index+1 ;i<prices.size();i++){
+        if(diff<(prices[i]-prices[index]))
+        diff = prices[i]-prices[index]
+    }
+    return diff;
+
+}
