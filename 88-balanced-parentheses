@@ -12,6 +12,8 @@ public Boolean isValid(String s){
                 return false;
             }else if(opening.indexOf(stack[stack.size()-1]) == closing.indexOf(strList[i])){
                 stack.remove(stack.size()-1);
+            }else{
+                return false;
             }
         }
     }
