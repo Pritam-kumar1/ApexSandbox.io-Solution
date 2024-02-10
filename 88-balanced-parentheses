@@ -17,6 +17,8 @@ public Boolean isValid(String s){
             }
         }
     }
+    if(stack.isEmpty())
         return true;
+    else return false;
     
 }
