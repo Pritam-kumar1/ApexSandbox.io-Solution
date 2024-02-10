@@ -1,0 +1,12 @@
+public static List<Integer> twoSum(List<Integer> nums, Integer target) {
+     //code here
+    Map<Integer,Integer> containTarget =  new Map<Integer,Integer>();
+    for(Integer i =0;i<nums.size();i++){
+        if(containTarget.containsKey(nums[i])){
+            return new List<Integer>{containTarget.get(nums[i]),i};
+        }else{
+            containTarget.put(target-nums[i],i);
+        }
+    }
+    return null;
+}
