@@ -5,5 +5,4 @@ public static List<Integer> squareList(List<Integer> nums){
     }
     nums.sort();
     return nums;
-    return null;
 }
