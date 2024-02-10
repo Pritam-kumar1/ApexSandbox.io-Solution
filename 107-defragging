@@ -1,0 +1,11 @@
+public void defragging(Integer[] memory)
+{
+    // code here
+    Integer i = 0;
+    for(Integer j=0;j<memory.size();j++){
+        if(memory[i]==-1){
+            memory.add(memory.remove(i--));
+        }
+        i++;
+    }
+}
