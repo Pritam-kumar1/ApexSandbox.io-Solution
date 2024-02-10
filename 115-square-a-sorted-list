@@ -1,10 +1,9 @@
 public static List<Integer> squareList(List<Integer> nums){
     //solution here
     
-    List<Integer> n = new List<Integer>();
-    for(Integer i : nums){
-        n.add(i*i);
+    for(Integer i =0 ;i<nums.size();i++){
+        nums[i] = nums[i] * nums[i];
     }
-    n.sort();
-    return n;
+    nums.sort();
+    return nums;
 }
