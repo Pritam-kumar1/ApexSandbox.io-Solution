@@ -1,0 +1,34 @@
+public List<String> commonChars(List<String> strs){
+    //solution here 
+    Map<String,Integer> charCount = new Map<String,Integer>();
+    //For Loop to enter first word in the map
+    for(Integer i =0;i<strs[0].length();i++){
+        if(charCount.containsKey(strs[0].charAt(i))){
+            charCount.get(strs[0].charAt(i)) += 1; 
+        }else{
+            charCount.put(strs[0].charAt(i),1);
+        }
+    }
+    
+    for(Integer i=1;i<strs.size();i++){
+        Map<String,Integer> tempCount = new Map<String,Integer>();
+        for(Integer j =0;j<strs[i].lenght();j++){
+            if(tempCount.containsKey(strs[i].charAt(j))){
+                tempCount.get(strs[i].charAt(j)) += 1; 
+            }else{
+                tempCount.put(strs[i].charAt(j),1);
+            }
+        }
+        for(Integer z =0;z<strs[i].lenght();z++){
+            if(charCount.containsKey(strs[i].charAt(z)) && tempCount.containsKey(strs[i].charAt(z))){
+                if(tempCount.get(strs[i].charAt(z))<charCount.get(strs[i].charAt(z))){
+                    charCount.get(strs[i].charAt(z)) = tempCount.get(strs[i].charAt(z));
+                }
+            }
+            else if(!charCount.containsKey(strs[i].charAt(z))){
+                charCount.remove(strs[i].charAt(z));
+            }
+        }
+    }
+    return null;
+}
