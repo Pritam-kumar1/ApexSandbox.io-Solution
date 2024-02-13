@@ -6,12 +6,18 @@ public static Boolean sameString(String str1, String str2){
         if(s1[i+1]=='#'){
             s1.remove(i);
             s1.remove(i);
+        }else if(s1[i]=='#'){
+            s1.remove(i-1);
+            s1.remove(i-1);
         }
     }
     for(Integer i=0;i<s2.size()-1;i++){
         if(s2[i+1]=='#'){
             s2.remove(i);
             s2.remove(i);
+        }else if(s2[i]=='#'){
+            s2.remove(i-1);
+            s2.remove(i-1);
         }
     }
     if(s1 == s2)
