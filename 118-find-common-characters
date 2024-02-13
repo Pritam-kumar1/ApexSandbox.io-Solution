@@ -1,6 +1,6 @@
 public List<String> commonChars(List<String> strs){
     //solution here 
-    Map<String,Integer> charCount = new Map<String,Integer>();
+    Map<Integer,Integer> charCount = new Map<Integer,Integer>();
     //For Loop to enter first word in the map
     for(Integer i =0;i<strs[0].length();i++){
         if(charCount.containsKey(strs[0].charAt(i))){
@@ -11,7 +11,7 @@ public List<String> commonChars(List<String> strs){
     }
     
     for(Integer i=1;i<strs.size();i++){
-        Map<String,Integer> tempCount = new Map<String,Integer>();
+        Map<Integer,Integer> tempCount = new Map<Integer,Integer>();
         for(Integer j =0;j<strs[i].lenght();j++){
             if(tempCount.containsKey(strs[i].charAt(j))){
                 tempCount.get(strs[i].charAt(j)) += 1; 
