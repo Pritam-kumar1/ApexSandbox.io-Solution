@@ -1,24 +1,37 @@
 public static Boolean sameString(String str1, String str2){
     // solution
-    List<String> s1 = str1.split('');
-    List<String> s2 = str2.split('');
-    for(Integer i=0;i<s1.size()-1;i++){
-        if(s1[i+1]=='#'){
-            s1.remove(i);
-            s1.remove(i);
-            i--;
-            i--;
-        }
+    str1 = process(str1);
+
+    str2 = process(str2);
+
+    return str1.equals(str2);
+}
+public static String process(String s){
+
+    List<String> sp = s.split('');
+
+    String res = '';
+
+    Integer i = 0, count = 0;
+
+    i = sp.size() - 1;
+
+    while (i >= 0){
+
+        if (sp.get(i) == '#'){
+
+            count++;
+
+        } else if (count > 0){
+
+            count--;
+
+        }else res += sp.get(i);
+
+        i--;
+
     }
-    for(Integer i=0;i<s2.size()-1;i++){
-        if(s2[i+1]=='#'){
-            s2.remove(i);
-            s2.remove(i);
-            i--;
-            i--;
-        }
-    }
-    if(s1 == s2)
-    return true;
-    return false;
+
+    return res;
+
 }
