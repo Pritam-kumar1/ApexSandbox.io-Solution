@@ -1,34 +1,53 @@
 public List<String> commonChars(List<String> strs){
-    //solution here 
-    Map<Integer,Integer> charCount = new Map<Integer,Integer>();
-    //For Loop to enter first word in the map
-    for(Integer i =0;i<strs[0].length();i++){
-        if(charCount.containsKey(strs[0].charAt(i))){
-            charCount.get(strs[0].charAt(i)) += 1; 
-        }else{
-            charCount.put(strs[0].charAt(i),1);
+    //solution here
+
+    Integer[] listCount = new Integer[26];
+
+    for (Integer i = 0; i < 26; i++)
+
+        listCount[i] = 2147483647;
+
+    for (String s : strs){
+
+        Integer[] wordCount = new Integer[26];
+
+        for (Integer i = 0; i < 26; i++)
+
+            wordCount[i] = 0;
+
+        for (Integer i = 0; i < s.length(); i++){
+
+            wordCount[s.charAt(i) - 97] = wordCount[s.charAt(i) - 97] + 1;
+
         }
+
+        System.debug(wordCount);
+
+        for (Integer i = 0; i < 26; i++)
+
+            listCount[i] = Math.min(listCount[i], wordCount[i]);
+
     }
-    
-    for(Integer i=1;i<strs.size();i++){
-        Map<Integer,Integer> tempCount = new Map<Integer,Integer>();
-        for(Integer j =0;j<strs[i].lenght();j++){
-            if(tempCount.containsKey(strs[i].charAt(j))){
-                tempCount.get(strs[i].charAt(j)) += 1; 
-            }else{
-                tempCount.put(strs[i].charAt(j),1);
-            }
+
+    System.debug(listCount);
+
+    List<String> res = new List<String>();
+
+    for (Integer i = 0; i < 26; i++){
+
+        Integer count = listCount[i];
+
+        while (count > 0){
+
+            count--;
+
+            String myChar = String.fromCharArray(new List<integer>{ i + 97 });
+
+            res.add(myChar);
+
         }
-        for(Integer z =0;z<strs[i].lenght();z++){
-            if(charCount.containsKey(strs[i].charAt(z)) && tempCount.containsKey(strs[i].charAt(z))){
-                if(tempCount.get(strs[i].charAt(z))<charCount.get(strs[i].charAt(z))){
-                    charCount.get(strs[i].charAt(z)) = tempCount.get(strs[i].charAt(z));
-                }
-            }
-            else if(!charCount.containsKey(strs[i].charAt(z))){
-                charCount.remove(strs[i].charAt(z));
-            }
-        }
+
     }
-    return null;
+
+    return res;
 }
